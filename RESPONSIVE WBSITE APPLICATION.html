@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tumusiime John – Senior Plumber | NWSC Kampala</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ── RESET & TOKENS ──────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1F3A;
+  --navy-mid:#132948;
+  --cyan:#00C2FF;
+  --cyan-dim:#00a8db;
+  --amber:#F5A623;
+  --slate:#4A6080;
+  --light:#F7F9FC;
+  --white:#ffffff;
+  --card:#1a2f4a;
+  --radius:14px;
+  --shadow:0 8px 32px rgba(0,194,255,.13);
+  --transition:all .3s cubic-bezier(.4,0,.2,1);
+  --ff-display:'Poppins',sans-serif;
+  --ff-body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--navy);color:var(--light);font-family:var(--ff-body);line-height:1.65;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* ── SCROLLBAR ───────────────────────────────────────────────── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px}
+
+/* ── NAV ─────────────────────────────────────────────────────── */
+#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 5%;
+  background:rgba(11,31,58,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,194,255,.12);
+  transition:var(--transition);
+}
+.nav-brand{
+  display:flex;align-items:center;gap:.6rem;
+  font-family:var(--ff-display);font-weight:700;font-size:1rem;
+}
+.nav-brand .drop-icon{
+  width:34px;height:34px;
+  background:linear-gradient(135deg,var(--cyan),var(--amber));
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;color:var(--navy);font-weight:800;flex-shrink:0;
+}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{
+  font-size:.88rem;font-weight:500;color:rgba(247,249,252,.75);
+  transition:var(--transition);position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+  background:var(--cyan);transition:width .3s;
+}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:var(--cyan);color:var(--navy)!important;
+  padding:.45rem 1.1rem;border-radius:20px;font-weight:600!important;
+  transition:var(--transition)!important;
+}
+.nav-cta:hover{background:var(--amber)!important}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--light);border-radius:2px;transition:var(--transition)}
+.mobile-menu{
+  display:none;position:fixed;top:62px;left:0;right:0;
+  background:rgba(11,31,58,.97);backdrop-filter:blur(16px);
+  padding:1.5rem 5%;z-index:998;border-bottom:1px solid rgba(0,194,255,.15);
+}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.2rem}
+.mobile-menu a{font-size:1rem;font-weight:500;color:var(--light);display:block;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+
+/* ── HERO ─────────────────────────────────────────────────────── */
+#home{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;padding:7rem 5% 4rem;
+  background:radial-gradient(ellipse at 70% 50%,rgba(0,194,255,.08) 0%,transparent 60%),
+             linear-gradient(160deg,#0B1F3A 0%,#0d2540 60%,#101a2c 100%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3rem;align-items:center;max-width:1100px;width:100%;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--cyan);background:rgba(0,194,255,.08);
+  border:1px solid rgba(0,194,255,.2);border-radius:20px;padding:.35rem .9rem;
+  margin-bottom:1.2rem;
+}
+.hero-title{
+  font-family:var(--ff-display);font-size:clamp(2rem,4.5vw,3.3rem);
+  font-weight:800;line-height:1.15;margin-bottom:1rem;
+  color:var(--white);
+}
+.hero-title span{
+  background:linear-gradient(90deg,var(--cyan),var(--amber));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  font-size:1.05rem;color:rgba(247,249,252,.7);
+  margin-bottom:1.8rem;max-width:500px;
+}
+.hero-stats{
+  display:flex;gap:2rem;margin-bottom:2rem;
+}
+.stat{display:flex;flex-direction:column;gap:.1rem}
+.stat-num{
+  font-family:var(--ff-display);font-size:1.8rem;font-weight:800;
+  color:var(--cyan);line-height:1;
+}
+.stat-label{font-size:.75rem;color:rgba(247,249,252,.55);font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:linear-gradient(135deg,var(--cyan),#0096cc);
+  color:var(--navy);font-weight:700;font-size:.93rem;
+  padding:.8rem 1.8rem;border-radius:30px;border:none;cursor:pointer;
+  transition:var(--transition);box-shadow:0 4px 20px rgba(0,194,255,.3);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,194,255,.45)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:transparent;color:var(--light);font-weight:600;font-size:.93rem;
+  padding:.8rem 1.8rem;border-radius:30px;
+  border:1.5px solid rgba(247,249,252,.2);cursor:pointer;
+  transition:var(--transition);
+}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+
+/* Hero visual */
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.pipe-card{
+  background:linear-gradient(135deg,var(--card),#152238);
+  border:1px solid rgba(0,194,255,.18);
+  border-radius:24px;padding:2.5rem;
+  box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 40px rgba(0,194,255,.06);
+  max-width:340px;width:100%;
+  position:relative;overflow:hidden;
+}
+.pipe-card::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:180px;height:180px;
+  background:radial-gradient(circle,rgba(0,194,255,.12),transparent 70%);
+  border-radius:50%;
+}
+.pc-badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:rgba(0,194,255,.1);border:1px solid rgba(0,194,255,.2);
+  border-radius:20px;padding:.3rem .8rem;
+  font-size:.73rem;font-weight:600;color:var(--cyan);margin-bottom:1.2rem;
+}
+.pc-avatar{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--cyan),var(--amber));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;margin-bottom:1rem;
+  box-shadow:0 0 0 4px rgba(0,194,255,.15);
+}
+.pc-name{font-family:var(--ff-display);font-weight:700;font-size:1.15rem;color:var(--white);margin-bottom:.2rem}
+.pc-role{font-size:.82rem;color:rgba(247,249,252,.55);margin-bottom:1.2rem}
+.pc-skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.skill-tag{
+  background:rgba(0,194,255,.1);border:1px solid rgba(0,194,255,.15);
+  color:rgba(247,249,252,.75);font-size:.72rem;font-weight:500;
+  padding:.25rem .7rem;border-radius:12px;
+}
+.pc-divider{height:1px;background:rgba(0,194,255,.1);margin:1rem 0}
+.pc-contact{display:flex;flex-direction:column;gap:.5rem}
+.pc-contact-item{
+  display:flex;align-items:center;gap:.7rem;
+  font-size:.82rem;color:rgba(247,249,252,.65);
+}
+.pc-contact-item i{color:var(--cyan);width:16px;text-align:center}
+
+/* Floating badges */
+.float-badge{
+  position:absolute;
+  background:var(--card);border:1px solid rgba(0,194,255,.2);
+  border-radius:12px;padding:.6rem 1rem;
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.78rem;font-weight:600;color:var(--white);
+  box-shadow:0 8px 24px rgba(0,0,0,.3);
+  animation:float 3s ease-in-out infinite;
+}
+.float-badge:nth-child(2){animation-delay:1s}
+.float-badge .badge-icon{
+  width:28px;height:28px;border-radius:8px;
+  background:linear-gradient(135deg,var(--cyan),var(--amber));
+  display:flex;align-items:center;justify-content:center;font-size:.85rem;
+  color:var(--navy);
+}
+.badge-1{top:-20px;right:-30px}
+.badge-2{bottom:20px;left:-40px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* BG pipes decoration */
+.bg-pipes{
+  position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:.05;
+}
+
+/* ── SECTION BASE ─────────────────────────────────────────────── */
+section{padding:5rem 5%}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-eyebrow{
+  font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;
+}
+.section-eyebrow::before{content:'';display:inline-block;width:20px;height:2px;background:var(--cyan)}
+.section-title{
+  font-family:var(--ff-display);font-size:clamp(1.7rem,3.5vw,2.4rem);
+  font-weight:800;color:var(--white);margin-bottom:.8rem;line-height:1.25;
+}
+.section-sub{font-size:1rem;color:rgba(247,249,252,.6);max-width:560px}
+.section-header{margin-bottom:3rem}
+.section-header.centered{text-align:center}
+.section-header.centered .section-eyebrow{justify-content:center}
+.section-header.centered .section-sub{margin:0 auto}
+
+/* ── ABOUT ───────────────────────────────────────────────────── */
+#about{background:var(--navy-mid)}
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:3.5rem;align-items:center}
+.about-img-wrap{
+  position:relative;display:flex;justify-content:center;
+}
+.about-img-placeholder{
+  width:280px;height:320px;border-radius:20px;
+  background:linear-gradient(160deg,var(--card),#0e2038);
+  border:1px solid rgba(0,194,255,.15);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;color:rgba(247,249,252,.3);font-size:.85rem;
+  position:relative;overflow:hidden;
+}
+.about-img-placeholder::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 20%,rgba(0,194,255,.06),transparent 70%);
+}
+.about-img-placeholder i{font-size:4rem;color:rgba(0,194,255,.2)}
+.about-badge-wrap{
+  position:absolute;bottom:20px;right:-20px;
+  background:linear-gradient(135deg,var(--amber),#e8941a);
+  color:var(--navy);border-radius:14px;padding:.8rem 1.2rem;
+  text-align:center;box-shadow:0 8px 24px rgba(245,166,35,.3);
+  font-family:var(--ff-display);font-weight:700;
+}
+.about-badge-wrap .badge-num{font-size:1.8rem;line-height:1}
+.about-badge-wrap .badge-txt{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.about-content p{color:rgba(247,249,252,.72);font-size:.97rem;margin-bottom:1rem;line-height:1.75}
+.about-meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:.8rem;
+  margin-top:1.5rem;margin-bottom:1.8rem;
+}
+.meta-item{
+  display:flex;align-items:flex-start;gap:.7rem;
+  background:rgba(0,194,255,.04);border:1px solid rgba(0,194,255,.1);
+  border-radius:10px;padding:.8rem 1rem;
+}
+.meta-item i{color:var(--cyan);margin-top:2px;flex-shrink:0}
+.meta-item strong{display:block;font-size:.75rem;color:rgba(247,249,252,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.1rem}
+.meta-item span{font-size:.88rem;color:var(--white);font-weight:500}
+
+/* ── SERVICES ────────────────────────────────────────────────── */
+#services{background:var(--navy)}
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1.5rem;
+}
+.service-card{
+  background:var(--card);
+  border:1px solid rgba(0,194,255,.1);
+  border-radius:var(--radius);padding:1.8rem;
+  transition:var(--transition);cursor:default;
+  position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--amber));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s;
+}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(0,194,255,.25);
+  box-shadow:var(--shadow);
+}
+.sc-icon{
+  width:50px;height:50px;border-radius:13px;
+  background:rgba(0,194,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:1rem;
+  border:1px solid rgba(0,194,255,.15);
+  transition:var(--transition);
+}
+.service-card:hover .sc-icon{background:rgba(0,194,255,.18);transform:scale(1.1)}
+.service-card h3{
+  font-family:var(--ff-display);font-weight:700;font-size:1.05rem;
+  color:var(--white);margin-bottom:.6rem;
+}
+.service-card p{
+  font-size:.88rem;color:rgba(247,249,252,.6);line-height:1.7;
+}
+.sc-more{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.8rem;color:var(--cyan);font-weight:600;margin-top:.9rem;
+  cursor:pointer;border:none;background:none;padding:0;
+  transition:var(--transition);
+}
+.sc-more:hover{gap:.6rem}
+
+/* ── PORTFOLIO ───────────────────────────────────────────────── */
+#portfolio{background:var(--navy-mid)}
+.portfolio-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1.5rem;
+}
+.portfolio-card{
+  background:var(--card);border:1px solid rgba(0,194,255,.1);
+  border-radius:var(--radius);overflow:hidden;transition:var(--transition);
+}
+.portfolio-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.pc-img{
+  height:160px;background:linear-gradient(135deg,#152238,#0a1929);
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;position:relative;overflow:hidden;
+}
+.pc-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 60%,var(--card));
+}
+.pc-body{padding:1.2rem}
+.pc-body h4{
+  font-family:var(--ff-display);font-weight:700;font-size:.97rem;
+  color:var(--white);margin-bottom:.4rem;
+}
+.pc-body p{font-size:.83rem;color:rgba(247,249,252,.55)}
+.pc-tag{
+  display:inline-block;background:rgba(0,194,255,.1);
+  color:var(--cyan);font-size:.7rem;font-weight:600;
+  padding:.2rem .6rem;border-radius:8px;margin-top:.7rem;
+  border:1px solid rgba(0,194,255,.15);
+}
+
+/* ── WHY CHOOSE ──────────────────────────────────────────────── */
+#why{background:var(--navy)}
+.why-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:1.5rem;
+}
+.why-card{
+  background:var(--card);border:1px solid rgba(0,194,255,.1);
+  border-radius:var(--radius);padding:1.8rem 1.5rem;text-align:center;
+  transition:var(--transition);
+}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(0,194,255,.22)}
+.why-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(0,194,255,.15),rgba(0,194,255,.05));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;margin:0 auto 1rem;
+  border:1px solid rgba(0,194,255,.15);
+}
+.why-card h4{font-family:var(--ff-display);font-weight:700;font-size:.97rem;color:var(--white);margin-bottom:.5rem}
+.why-card p{font-size:.83rem;color:rgba(247,249,252,.55)}
+
+/* ── CONTACT + FORM ──────────────────────────────────────────── */
+#contact{background:var(--navy-mid)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:start}
+.contact-info h3{
+  font-family:var(--ff-display);font-weight:700;font-size:1.4rem;
+  color:var(--white);margin-bottom:.6rem;
+}
+.contact-info p{font-size:.9rem;color:rgba(247,249,252,.6);margin-bottom:1.8rem}
+.contact-cards{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.contact-card{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--card);border:1px solid rgba(0,194,255,.1);
+  border-radius:12px;padding:1rem 1.2rem;transition:var(--transition);
+}
+.contact-card:hover{border-color:rgba(0,194,255,.22);transform:translateX(4px)}
+.cc-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(0,194,255,.2),rgba(0,194,255,.05));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;color:var(--cyan);
+}
+.cc-label{font-size:.73rem;color:rgba(247,249,252,.45);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.1rem}
+.cc-val{font-size:.92rem;color:var(--white);font-weight:600}
+.whatsapp-btn{
+  display:inline-flex;align-items:center;gap:.6rem;width:100%;justify-content:center;
+  background:linear-gradient(135deg,#25D366,#1daa52);color:#fff;font-weight:700;
+  font-size:.93rem;padding:.9rem 1.5rem;border-radius:12px;
+  border:none;cursor:pointer;transition:var(--transition);
+  box-shadow:0 4px 20px rgba(37,211,102,.25);
+}
+.whatsapp-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,.4)}
+
+/* Form */
+.booking-form{
+  background:var(--card);border:1px solid rgba(0,194,255,.12);
+  border-radius:20px;padding:2rem;
+}
+.form-title{
+  font-family:var(--ff-display);font-weight:700;font-size:1.1rem;
+  color:var(--white);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.form-title i{color:var(--cyan)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.form-group.no-mb{margin-bottom:0}
+label{font-size:.78rem;font-weight:600;color:rgba(247,249,252,.55);text-transform:uppercase;letter-spacing:.08em}
+input,select,textarea{
+  background:rgba(0,0,0,.25);border:1px solid rgba(0,194,255,.15);
+  border-radius:10px;padding:.75rem 1rem;
+  color:var(--white);font-size:.9rem;font-family:var(--ff-body);
+  transition:var(--transition);width:100%;
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--cyan);
+  box-shadow:0 0 0 3px rgba(0,194,255,.1);
+}
+input::placeholder,textarea::placeholder{color:rgba(247,249,252,.25)}
+select option{background:var(--navy-mid);color:var(--white)}
+textarea{resize:vertical;min-height:100px}
+.form-submit{
+  width:100%;background:linear-gradient(135deg,var(--cyan),#0096cc);
+  color:var(--navy);font-weight:700;font-size:.97rem;font-family:var(--ff-body);
+  padding:.9rem;border:none;border-radius:12px;cursor:pointer;
+  transition:var(--transition);margin-top:.5rem;
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,194,255,.35)}
+.success-msg{
+  display:none;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.25);
+  border-radius:10px;padding:1rem;text-align:center;
+  color:#25D366;font-size:.9rem;font-weight:500;margin-top:1rem;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer{
+  background:#070f1c;
+  border-top:1px solid rgba(0,194,255,.08);
+  padding:3rem 5% 2rem;position:relative;overflow:hidden;
+}
+footer::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),var(--amber),var(--cyan),transparent);
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem;
+  margin-bottom:2rem;
+}
+.footer-brand .brand-name{
+  font-family:var(--ff-display);font-weight:800;font-size:1.2rem;
+  color:var(--white);margin-bottom:.5rem;
+}
+.footer-brand p{font-size:.85rem;color:rgba(247,249,252,.45);margin-bottom:1.2rem}
+.social-row{display:flex;gap:.8rem}
+.social-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(0,194,255,.08);border:1px solid rgba(0,194,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(247,249,252,.55);font-size:.9rem;transition:var(--transition);
+}
+.social-icon:hover{background:rgba(0,194,255,.18);color:var(--cyan);transform:translateY(-2px)}
+.footer-col h5{
+  font-family:var(--ff-display);font-weight:700;font-size:.9rem;
+  color:var(--white);margin-bottom:1rem;
+}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:.6rem}
+.footer-col ul a{font-size:.85rem;color:rgba(247,249,252,.45);transition:var(--transition)}
+.footer-col ul a:hover{color:var(--cyan);padding-left:4px}
+.footer-bottom{
+  max-width:1100px;margin:0 auto;
+  padding-top:1.5rem;border-top:1px solid rgba(0,194,255,.06);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom p{font-size:.8rem;color:rgba(247,249,252,.3)}
+.footer-bottom .by{color:rgba(0,194,255,.6)}
+
+/* ── MODALS ───────────────────────────────────────────────────── */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:2000;
+  background:rgba(0,0,0,.7);backdrop-filter:blur(4px);
+  align-items:center;justify-content:center;padding:1rem;
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:var(--card);border:1px solid rgba(0,194,255,.18);
+  border-radius:20px;max-width:540px;width:100%;max-height:80vh;overflow-y:auto;
+  padding:2rem;position:relative;animation:slideUp .3s ease;
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{
+  position:absolute;top:1rem;right:1rem;
+  background:rgba(255,255,255,.05);border:none;cursor:pointer;
+  width:34px;height:34px;border-radius:8px;color:rgba(247,249,252,.5);
+  font-size:1rem;display:flex;align-items:center;justify-content:center;
+  transition:var(--transition);
+}
+.modal-close:hover{background:rgba(255,255,255,.1);color:var(--white)}
+.modal h3{font-family:var(--ff-display);font-weight:700;font-size:1.2rem;color:var(--white);margin-bottom:.5rem}
+.modal p{font-size:.88rem;color:rgba(247,249,252,.65);line-height:1.75}
+.modal-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:rgba(0,194,255,.12);border:1px solid rgba(0,194,255,.18);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;margin-bottom:1rem;
+}
+
+/* ── SCROLL-TO-TOP ───────────────────────────────────────────── */
+#scrollTop{
+  position:fixed;bottom:1.5rem;right:1.5rem;
+  width:44px;height:44px;border-radius:12px;
+  background:var(--cyan);color:var(--navy);
+  border:none;cursor:pointer;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:var(--transition);
+  box-shadow:0 4px 16px rgba(0,194,255,.3);z-index:500;
+}
+#scrollTop.visible{opacity:1;pointer-events:all}
+#scrollTop:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,194,255,.45)}
+
+/* ── ANIMATIONS ──────────────────────────────────────────────── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-stats{justify-content:center}
+  .hero-actions{justify-content:center}
+  .hero-visual{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .about-img-wrap{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  section{padding:4rem 5%}
+  .form-row{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .about-meta{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero-stats{gap:1.2rem}
+  .services-grid,.portfolio-grid,.why-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-brand">
+    <div class="drop-icon"><i class="fas fa-tint"></i></div>
+    <span>Tumusiime John<span style="color:var(--cyan);font-weight:600"> · NWSC</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#why">Why Choose Me</a></li>
+    <li><a href="#contact" class="nav-cta">Book Service</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#services" onclick="closeMenu()">Services</a></li>
+    <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+    <li><a href="#why" onclick="closeMenu()">Why Choose Me</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Book Service</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-grid">
+    <div class="hero-content fade-in">
+      <div class="hero-eyebrow"><i class="fas fa-certificate"></i> NWSC Certified Professional</div>
+      <h1 class="hero-title">Kampala's Trusted<br><span>Water & Plumbing</span><br>Expert</h1>
+      <p class="hero-sub">Over 17 years delivering reliable, code-compliant plumbing solutions — from home repairs to large-scale municipal water infrastructure.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">17+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Projects Done</span></div>
+        <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Emergency Ready</span></div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary"><i class="fas fa-calendar-check"></i> Book a Service</a>
+        <a href="tel:0752919352" class="btn-outline"><i class="fas fa-phone"></i> 0752 919 352</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-in" style="transition-delay:.2s">
+      <div class="float-badge badge-1"><div class="badge-icon"><i class="fas fa-star"></i></div>Top Rated</div>
+      <div class="pipe-card">
+        <div class="pc-badge"><i class="fas fa-shield-halved"></i> Senior Plumber · NWSC</div>
+        <div class="pc-avatar"><i class="fas fa-hard-hat"></i></div>
+        <div class="pc-name">Tumusiime John</div>
+        <div class="pc-role">National Water & Sewerage Corporation · Kampala</div>
+        <div class="pc-skills">
+          <span class="skill-tag">Pipe Installation</span>
+          <span class="skill-tag">Leak Detection</span>
+          <span class="skill-tag">Water Mains</span>
+          <span class="skill-tag">Drainage</span>
+          <span class="skill-tag">HDPE / PVC</span>
+        </div>
+        <div class="pc-divider"></div>
+        <div class="pc-contact">
+          <div class="pc-contact-item"><i class="fas fa-phone"></i> 0752 919 352</div>
+          <div class="pc-contact-item"><i class="fas fa-location-dot"></i> Kampala, Uganda</div>
+          <div class="pc-contact-item"><i class="fas fa-building-columns"></i> NWSC, Uganda</div>
+        </div>
+      </div>
+      <div class="float-badge badge-2"><div class="badge-icon"><i class="fas fa-wrench"></i></div>Emergency Service</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-in">
+        <div class="about-img-placeholder">
+          <i class="fas fa-hard-hat"></i>
+          <img src="c:\Users\RAMGOD ZILLA\Desktop\BYARUGABA ARNOLD PROJECT\arnold.png" alt="" srcset="">
+          
+        </div>
+        <div class="about-badge-wrap">
+          <div class="badge-num">17+</div>
+          <div class="badge-txt">Yrs of Service</div>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <div class="section-eyebrow">About</div>
+        <h2 class="section-title">Dedicated to Clean Water for Every Kampalan</h2>
+        <p>Tumusiime John is a highly skilled professional plumber with over 17 years of hands-on experience in Uganda's water and sanitation sector. At the National Water and Sewerage Corporation (NWSC), he has built a reputation for reliability and technical excellence.</p>
+        <p>He is proficient in installing and maintaining water supply systems, sewer lines, and plumbing fixtures for residential and commercial clients — and is trained in modern technologies, safety standards, and sustainable environmental practices.</p>
+        <div class="about-meta">
+          <div class="meta-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><span>Kampala, Uganda</span></div></div>
+          <div class="meta-item"><i class="fas fa-phone"></i><div><strong>Phone / WhatsApp</strong><span>0752 919 352</span></div></div>
+          <div class="meta-item"><i class="fas fa-building"></i><div><strong>Employer</strong><span>NWSC Uganda</span></div></div>
+          <div class="meta-item"><i class="fas fa-clock"></i><div><strong>Availability</strong><span>Mon – Sun, 24/7 Emergency</span></div></div>
+        </div>
+        <a href="#contact" class="btn-primary"><i class="fas fa-envelope"></i> Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header centered fade-in">
+      <div class="section-eyebrow">What I Offer</div>
+      <h2 class="section-title">Expert Plumbing Services</h2>
+      <p class="section-sub">Comprehensive water and plumbing solutions for homes, apartments, businesses, and municipal infrastructure across Kampala.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in" onclick="openModal('modal-pipe')">
+        <div class="sc-icon">🚰</div>
+        <h3>Pipe Installation</h3>
+        <p>Expert installation of PVC, PPR, HDPE & galvanized pipe systems for homes and large commercial buildings with precise measurement and pressure testing.</p>
+        <button class="sc-more">Learn more <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="service-card fade-in" onclick="openModal('modal-leak')">
+        <div class="sc-icon">🔧</div>
+        <h3>Leak Detection & Repair</h3>
+        <p>Fast, accurate detection of visible and underground leaks using pressure testing and specialized tools — minimizing water loss and property damage.</p>
+        <button class="sc-more">Learn more <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="service-card fade-in" onclick="openModal('modal-bathroom')">
+        <div class="sc-icon">🏠</div>
+        <h3>Bathroom & Kitchen Plumbing</h3>
+        <p>Professional fitting of sinks, showers, toilets, faucets, and drainage systems — built for durability and hygiene compliance.</p>
+        <button class="sc-more">Learn more <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="service-card fade-in" onclick="openModal('modal-drain')">
+        <div class="sc-icon">🌧️</div>
+        <h3>Drainage & Sewer Systems</h3>
+        <p>Complete installation, repair, and maintenance of drainage lines and municipal sewer networks — preventing flooding and blockages.</p>
+        <button class="sc-more">Learn more <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="service-card fade-in" onclick="openModal('modal-tank')">
+        <div class="sc-icon">🪣</div>
+        <h3>Water Tank Installation</h3>
+        <p>Supply and installation of elevated and ground-level water storage tanks with float valves, piping connections, and overflow management.</p>
+        <button class="sc-more">Learn more <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="service-card fade-in" onclick="openModal('modal-nwsc')">
+        <div class="sc-icon">🌍</div>
+        <h3>NWSC Mainline Repair</h3>
+        <p>Emergency repair of burst mains, large-diameter pipeline restoration, and pressure-loss diagnostics for national water infrastructure.</p>
+        <button class="sc-more">Learn more <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="section-header centered fade-in">
+      <div class="section-eyebrow">Track Record</div>
+      <h2 class="section-title">Notable Projects</h2>
+      <p class="section-sub">A selection of infrastructure and residential work completed over 17 years at NWSC and in private practice.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in">
+        <div class="pc-img">🏗️</div>
+        <div class="pc-body">
+          <h4>Residential Estate Pipe Network — Kira</h4>
+          <p>Full water supply pipe installation for a 40-unit residential estate: PPR mains, individual risers, and pressure balancing.</p>
+          <span class="pc-tag">Pipe Installation</span>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
+        <div class="pc-img">💧</div>
+        <div class="pc-body">
+          <h4>NWSC Underground Leak Repair — Nakawa</h4>
+          <p>Located and repaired a major buried main-line leak causing 18,000 litres/day water loss with minimal road disruption.</p>
+          <span class="pc-tag">Leak Detection</span>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
+        <div class="pc-img">🏨</div>
+        <div class="pc-body">
+          <h4>Hotel Bathroom Renovation — Kololo</h4>
+          <p>Complete bathroom and kitchen plumbing upgrade for a boutique hotel: 18 units, new waste stacks, and digital faucets.</p>
+          <span class="pc-tag">Bathroom Plumbing</span>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
+        <div class="pc-img">🌊</div>
+        <div class="pc-body">
+          <h4>Drainage Overhaul — Industrial Area</h4>
+          <p>Redesigned and installed HDPE drainage system for a manufacturing facility to meet NEMA runoff compliance standards.</p>
+          <span class="pc-tag">Drainage Systems</span>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
+        <div class="pc-img">🪣</div>
+        <div class="pc-body">
+          <h4>Water Tank Network — Nansana</h4>
+          <p>Installed 10,000-litre elevated storage tanks with NWSC connection, distribution manifolds, and auto shut-off valves.</p>
+          <span class="pc-tag">Tank Installation</span>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
+        <div class="pc-img">🔩</div>
+        <div class="pc-body">
+          <h4>Emergency Main Burst — Kampala Road</h4>
+          <p>Coordinated overnight repair of a ductile iron main burst, restoring supply to 2,400 connections by morning.</p>
+          <span class="pc-tag">NWSC Emergency</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE ME -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-header centered fade-in">
+      <div class="section-eyebrow">Competitive Edge</div>
+      <h2 class="section-title">Why Clients Choose John</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <div class="why-icon"><i class="fas fa-medal" style="color:var(--cyan)"></i></div>
+        <h4>NWSC Certified</h4>
+        <p>Fully certified and active at Uganda's national water authority — ensuring code-compliant work every time.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon"><i class="fas fa-bolt" style="color:var(--amber)"></i></div>
+        <h4>Emergency 24/7</h4>
+        <p>Burst pipe at midnight? John responds fast — minimizing damage and restoring supply quickly.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon"><i class="fas fa-wallet" style="color:var(--cyan)"></i></div>
+        <h4>Fair Pricing</h4>
+        <p>Transparent quotes with no hidden fees. Quality work at rates that respect your budget.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon"><i class="fas fa-leaf" style="color:#2ecc71"></i></div>
+        <h4>Eco-Conscious</h4>
+        <p>Promotes water-efficient fixtures and designs systems that reduce waste and utility costs.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon"><i class="fas fa-tools" style="color:var(--amber)"></i></div>
+        <h4>Modern Equipment</h4>
+        <p>Uses current pressure testing gear, thermal cameras, and HDPE fusion tools for lasting repairs.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon"><i class="fas fa-handshake" style="color:var(--cyan)"></i></div>
+        <h4>Trusted by Community</h4>
+        <p>17 years of repeat clients across Kampala's residential, commercial, and institutional sectors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow">Book a Service</div>
+      <h2 class="section-title">Get Expert Help Today</h2>
+      <p class="section-sub">Reach out directly or fill the form — John responds within hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h3>Contact Details</h3>
+        <p>Available for bookings, consultations, and emergency callouts across Kampala.</p>
+        <div class="contact-cards">
+          <div class="contact-card"><div class="cc-icon"><i class="fas fa-phone"></i></div><div><div class="cc-label">Phone / WhatsApp</div><div class="cc-val">0752 919 352</div></div></div>
+          <div class="contact-card"><div class="cc-icon"><i class="fas fa-location-dot"></i></div><div><div class="cc-label">Service Area</div><div class="cc-val">Kampala & Greater Kampala</div></div></div>
+          <div class="contact-card"><div class="cc-icon"><i class="fas fa-clock"></i></div><div><div class="cc-label">Working Hours</div><div class="cc-val">Mon – Sun · Emergency 24/7</div></div></div>
+          <div class="contact-card"><div class="cc-icon"><i class="fas fa-building-columns"></i></div><div><div class="cc-label">Employer</div><div class="cc-val">NWSC Uganda</div></div></div>
+        </div>
+        <button class="whatsapp-btn" onclick="window.open('https://wa.me/256752919352','_blank')">
+          <i class="fab fa-whatsapp" style="font-size:1.3rem"></i> Chat on WhatsApp
+        </button>
+      </div>
+      <div class="fade-in" style="transition-delay:.15s">
+        <div class="booking-form">
+          <div class="form-title"><i class="fas fa-calendar-plus"></i> Request a Service</div>
+          <div class="form-row">
+            <div class="form-group no-mb"><label>Full Name</label><input type="text" placeholder="Your full name" required></div>
+            <div class="form-group no-mb"><label>Phone Number</label><input type="tel" placeholder="075XXXXXXXX" required></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="email@example.com"></div>
+          <div class="form-row">
+            <div class="form-group no-mb">
+              <label>Service Needed</label>
+              <select>
+                <option value="">— Select Service —</option>
+                <option>Pipe Installation</option>
+                <option>Leak Detection & Repair</option>
+                <option>Bathroom / Kitchen Plumbing</option>
+                <option>Drainage & Sewer Systems</option>
+                <option>Water Tank Installation</option>
+                <option>NWSC Mainline Repair</option>
+                <option>Emergency Callout</option>
+              </select>
+            </div>
+            <div class="form-group no-mb"><label>Preferred Date</label><input type="date"></div>
+          </div>
+          <div class="form-group"><label>Location in Kampala</label><input type="text" placeholder="E.g. Ntinda, Nansana, Kololo…" required></div>
+          <div class="form-group"><label>Describe the Issue</label><textarea placeholder="Briefly describe your plumbing problem or what you need done…"></textarea></div>
+          <button class="form-submit" onclick="submitForm()"><i class="fas fa-paper-plane"></i> Submit Request</button>
+          <div class="success-msg" id="successMsg"><i class="fas fa-check-circle"></i> Request received! John will call you within a few hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand-name">Tumusiime John</div>
+      <p>Senior Plumber · NWSC Uganda<br>Serving Kampala since 2007</p>
+      <div class="social-row">
+        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Pipe Installation</a></li>
+        <li><a href="#services">Leak Detection</a></li>
+        <li><a href="#services">Bathroom Plumbing</a></li>
+        <li><a href="#services">Drainage Systems</a></li>
+        <li><a href="#services">Tank Installation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#why">Why Choose Me</a></li>
+        <li><a href="#contact">Book Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Tumusiime John · Senior Plumber, NWSC Uganda. All rights reserved.</p>
+    <p>Built by <span class="by">Byarugaba Arnold Ramsey</span> · YMCA University, Kampala</p>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- SERVICE MODALS -->
+<div class="modal-overlay" id="modal-pipe">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-pipe')"><i class="fas fa-xmark"></i></button>
+    <div class="modal-icon">🚰</div>
+    <h3>Pipe Installation</h3>
+    <p>John has extensive expertise in pipe installation developed over 17 years at NWSC. He works with PVC, PPR, HDPE, and galvanized steel pipes — selecting materials based on project requirements and site conditions.</p>
+    <p style="margin-top:.8rem">His process covers reading technical drawings, precision cutting and joining, pressure testing after installation, and coordinating with engineers on large-scale projects to ensure code compliance and long-term durability.</p>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-leak">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-leak')"><i class="fas fa-xmark"></i></button>
+    <div class="modal-icon">🔧</div>
+    <h3>Leak Detection & Repair</h3>
+    <p>Using pressure testing, visual inspection, and specialized electronic tracing equipment, John locates hidden leaks in residential and municipal systems — including complex underground networks — with minimal excavation.</p>
+    <p style="margin-top:.8rem">Once located, he applies lasting repair methods and verifies results with post-repair pressure tests, reducing water loss and protecting structural integrity.</p>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-bathroom">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-bathroom')"><i class="fas fa-xmark"></i></button>
+    <div class="modal-icon">🏠</div>
+    <h3>Bathroom & Kitchen Plumbing</h3>
+    <p>John installs and maintains sinks, toilets, showers, bathtubs, water heaters, faucets, and drainage systems with correct pipe alignment, pressure balancing, and leak-free connections for hygiene-compliant results.</p>
+    <p style="margin-top:.8rem">He also troubleshoots common issues including clogged drains, low pressure, and faulty fixtures — delivering reliable, long-lasting outcomes tailored to client needs.</p>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-drain">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-drain')"><i class="fas fa-xmark"></i></button>
+    <div class="modal-icon">🌧️</div>
+    <h3>Drainage & Sewer Systems</h3>
+    <p>Comprehensive drainage design, installation, and maintenance for residential, commercial, and municipal clients — including HDPE storm drains, gravity sewers, and interceptor chambers.</p>
+    <p style="margin-top:.8rem">John ensures correct falls, joint sealing, and compliance with NEMA and NWSC design standards to prevent flooding, backflow, and environmental contamination.</p>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-tank">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-tank')"><i class="fas fa-xmark"></i></button>
+    <div class="modal-icon">🪣</div>
+    <h3>Water Tank Installation</h3>
+    <p>Supply and professional installation of plastic and concrete water storage tanks ranging from 500 to 10,000+ litres — including structural bases, inlet/outlet piping, float valves, overflow pipes, and NWSC connection permits.</p>
+    <p style="margin-top:.8rem">John designs distribution manifolds for multi-tenant buildings and includes disinfection procedures before handover.</p>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-nwsc">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-nwsc')"><i class="fas fa-xmark"></i></button>
+    <div class="modal-icon">🌍</div>
+    <h3>NWSC Mainline Repair</h3>
+    <p>As a senior NWSC plumber, John has led emergency repairs on ductile iron, steel, and HDPE mains across Kampala — restoring supply to thousands of households within hours of a burst or fault event.</p>
+    <p style="margin-top:.8rem">He applies safe-dig procedures, proper pipe-bridging techniques, and pressure testing to ensure restored mains meet long-term performance standards without repeat failures.</p>
+  </div>
+</div>
+
+<script>
+// NAV
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  const h=document.getElementById('hamburger');
+  m.classList.toggle('open');
+  h.classList.toggle('open');
+}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+
+// Scroll effects
+window.addEventListener('scroll',()=>{
+  const btn=document.getElementById('scrollTop');
+  btn.classList.toggle('visible',window.scrollY>300);
+  document.getElementById('navbar').style.padding=window.scrollY>50?'.6rem 5%':'.9rem 5%';
+});
+
+// Intersection Observer for fade-in
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+// Modals
+function openModal(id){
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+  o.addEventListener('click',e=>{if(e.target===o){o.classList.remove('open');document.body.style.overflow=''}});
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(o=>{o.classList.remove('open');document.body.style.overflow=''})}
+});
+
+// Form
+function submitForm(){
+  const msg=document.getElementById('successMsg');
+  msg.style.display='block';
+  setTimeout(()=>{msg.style.display='none'},5000);
+}
+
+// Active nav link
+const navLinks=document.querySelectorAll('.nav-links a:not(.nav-cta)');
+const sections=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)current=s.id});
+  navLinks.forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+current?'var(--cyan)':'';
+  });
+},{passive:true});
+</script>
+</body>
+</html>
